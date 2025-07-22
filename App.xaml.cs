@@ -1,4 +1,5 @@
-﻿namespace MauiAppLogin
+﻿
+namespace MauiAppLogin
 {
     public partial class App : Application
     {
@@ -7,6 +8,14 @@
             InitializeComponent();
 
             MainPage = new AppShell();
+        }
+        protected override Window CreateWindow(IActivationState activationState)
+        {
+            var Window = base.CreateWindow(activationState);
+            Window.Width = 400;
+            Window.Height = 600;
+
+            return Window;
         }
     }
 }
